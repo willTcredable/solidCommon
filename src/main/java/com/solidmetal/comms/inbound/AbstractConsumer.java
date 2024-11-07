@@ -3,7 +3,7 @@
  * Unauthorized copying of this file, via any medium is strictly prohibited
  * Proprietary and confidential
  */
-package com.solidmetal.common.comms.inbound;
+package com.solidmetal.comms.inbound;
 
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 

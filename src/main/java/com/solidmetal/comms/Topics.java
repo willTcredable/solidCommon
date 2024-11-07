@@ -1,4 +1,4 @@
-package com.solidmetal.common.comms;
+package com.solidmetal.comms;
 
 public class Topics {
 
