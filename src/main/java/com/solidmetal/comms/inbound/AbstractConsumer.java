@@ -12,6 +12,9 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
  */
 public abstract class AbstractConsumer<T> {
 
+    public AbstractConsumer() {
+    }
+
     public void processMessage(final T message, ThreadPoolTaskExecutor threadPoolTaskExecutor) {
         if(threadPoolTaskExecutor != null) {
             threadPoolTaskExecutor.submit(new Runnable() {
