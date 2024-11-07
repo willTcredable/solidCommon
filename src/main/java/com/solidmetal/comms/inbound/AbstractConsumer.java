@@ -15,14 +15,24 @@ public abstract class AbstractConsumer<T> {
     public AbstractConsumer() {
     }
 
+    public void processMessage(final T message) {
+        (new Thread(new Runnable() {
+            public void run() {
+                AbstractConsumer.this.process(message);
+            }
+        })).start();
+    }
+
     public void processMessage(final T message, ThreadPoolTaskExecutor threadPoolTaskExecutor) {
         if(threadPoolTaskExecutor != null) {
             threadPoolTaskExecutor.submit(new Runnable() {
                 @Override
                 public void run() {
-                    process(message);
+                    AbstractConsumer.this.process(message);
                 }
             });
+        } else {
+            this.processMessage(message);
         }
     }
 
