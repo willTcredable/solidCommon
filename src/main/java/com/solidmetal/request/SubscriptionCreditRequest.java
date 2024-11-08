@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 
 @Data
-public class SubscriptionRequest {
+public class SubscriptionCreditRequest {
 
     private String customerNumber;
     private String productCode;
