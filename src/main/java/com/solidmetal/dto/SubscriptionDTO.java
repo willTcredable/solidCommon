@@ -16,7 +16,7 @@ public class SubscriptionDTO implements Serializable {
     private Long id;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private String customerNumber;
+    private String customerId;
     private SubscriptionStatus status;
     private String comments;
     private String productCode;

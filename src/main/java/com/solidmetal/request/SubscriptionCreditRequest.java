@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Data
 public class SubscriptionCreditRequest {
 
-    private String customerNumber;
+    private String customerId;
     private String productCode;
     private String productName;
     private String partnerCode;

@@ -38,7 +38,7 @@ public class CustomerDTO implements Serializable  {
     private BigDecimal eligibleAmount;
     private BigDecimal score;
     private LocalDateTime creditScoreCheckDate;
-    private String customerNumber;
+    private String customerId;
     private SubscriptionStatus status;
 
 }
