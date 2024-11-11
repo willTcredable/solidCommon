@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.solidmetal</groupId>
 	<artifactId>common</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 	<packaging>jar</packaging>
 	<name>Common</name>
 	<url>http://maven.apache.org</url>
@@ -50,6 +50,10 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
 	</dependencies>
 	<distributionManagement>
