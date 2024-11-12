@@ -11,5 +11,6 @@ public class Topics {
     public static final String LOAN_CREATED_TOPIC = "LOAN_CREATED_TOPIC";
     public static final String LOAN_REPAYMENT_TOPIC = "LOAN_REPAYMENT_TOPIC";
     public static final String CUSTOMER_CASH_IN_TOPIC = "CUSTOMER_CASH_IN_TOPIC";
+    public static final String LOAN_PENALTY_TOPIC = "LOAN_PENALTY_TOPIC";
 
 }
