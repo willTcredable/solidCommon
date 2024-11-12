@@ -1,5 +1,6 @@
 package com.solidmetal.dto;
 
+import com.solidmetal.enums.SubscriptionStatus;
 import lombok.Data;
 
 import java.io.Serial;

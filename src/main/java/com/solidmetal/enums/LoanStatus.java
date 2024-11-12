@@ -1,0 +1,29 @@
+package com.solidmetal.enums;
+
+public enum LoanStatus {
+    CREATED,
+    OPEN,
+    NON_PERFORMING,
+    CLOSED,
+    ARCHIVED,
+    ACTIVE_NOT_PAID,
+    ACTIVE_PARTIALLY_PAID,
+    DEFAULT_PARTIALLY_PAID,
+    DEFAULT_NOT_PAID,
+    WRITE_OFF_PARTIALLY_PAID,
+    WRITE_OFF_NOT_PAID,
+    ACTIVE,
+    FINISHED,
+    DEFAULT,
+    WRITE_OFF,
+    FULLY_PAID,
+    NOT_PAID,
+    PARTIALLY_PAID,
+    RECOVERED,
+    NOT_RECOVERED,
+    PARTIALLY_RECOVERED,
+    NOT_DISBURSED;
+
+    private LoanStatus() {
+    }
+}

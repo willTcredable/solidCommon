@@ -1,5 +1,7 @@
 package com.solidmetal.dto;
 
+import com.solidmetal.enums.SubscriptionStatus;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;

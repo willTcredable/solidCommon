@@ -7,13 +7,8 @@ import java.time.LocalDateTime;
 
 
 @Data
-public class SubscriptionCreditRequest {
+public class CreditSubscriptionRequest extends CreditRequest {
 
-    private String customerId;
-    private String productCode;
-    private String productName;
-    private String partnerCode;
-    private String partnerName;
     private BigDecimal maxLoanLimit;
     private BigDecimal eligibleAmount;
     private BigDecimal score;
