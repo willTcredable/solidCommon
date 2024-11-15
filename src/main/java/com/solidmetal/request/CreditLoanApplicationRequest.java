@@ -19,8 +19,6 @@ public class CreditLoanApplicationRequest extends CreditRequest {
     private BigDecimal disbursedAmount;
     private String transactionId;
     private String description;
-    private LocalDateTime completedAt;
     private String externalTransactionId;
-    private String conversationId;
     private String bankPartner;
 }

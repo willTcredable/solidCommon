@@ -17,15 +17,11 @@ public class CreditLoanRequest extends CreditRequest {
     private LoanStatus status;
     private String tenorCode;
     private BigDecimal disbursedAmount;
-    private String transactionId;
     private String description;
-    private LocalDateTime completedAt;
     private String externalTransactionId;
-    private String conversationId;
     private String bankPartner;
 
     private int duration;
-
     private LocalDateTime loanStartDate;
     private LocalDateTime loanEndDate;
 

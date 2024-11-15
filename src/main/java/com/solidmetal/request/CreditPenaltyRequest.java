@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 public class CreditPenaltyRequest extends CreditRequest {
 
     private String externalTransactionId;
-    private String conversationId;
     private BigDecimal balance;
     private LocalDateTime transactionDate;
     private BigDecimal amount;
