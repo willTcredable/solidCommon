@@ -11,6 +11,7 @@ public class CreditAutoStrikeRequest extends CreditRequest {
 
     private String customerId;
     private BigDecimal cashInAmount;
-    private BigDecimal outstandingLoanAmount;
-
+    private BigDecimal amountToStrike;
+    private String accountNumber;
+    private String bankPartner;
 }
