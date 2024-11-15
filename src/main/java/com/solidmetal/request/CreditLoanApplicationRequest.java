@@ -21,4 +21,5 @@ public class CreditLoanApplicationRequest extends CreditRequest {
     private String description;
     private String externalTransactionId;
     private String bankPartner;
+    private LocalDateTime completedAt;
 }
