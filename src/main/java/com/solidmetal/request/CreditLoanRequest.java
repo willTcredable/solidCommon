@@ -1,8 +1,5 @@
 package com.solidmetal.request;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.solidmetal.enums.LoanStatus;
 import lombok.Data;
 
@@ -29,11 +26,7 @@ public class CreditLoanRequest extends CreditRequest {
 
     private int duration;
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime loanStartDate;
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime loanEndDate;
 
     private String currency;
@@ -41,12 +34,13 @@ public class CreditLoanRequest extends CreditRequest {
     private BigDecimal balance;
     private BigDecimal paidAmount;
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime lastTransactionDate;
 
     private BigDecimal interestAmount;
     private BigDecimal provisioningAmount;
     private BigDecimal penaltyAmount;
     private BigDecimal taxAmount;
+
+    private BigDecimal interestRate;
+    private BigDecimal provisioningRate;
 }
