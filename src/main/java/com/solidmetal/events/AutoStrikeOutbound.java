@@ -1,13 +1,12 @@
-package com.solidmetal.request;
+package com.solidmetal.events;
 
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 
 @Data
-public class CreditAutoStrikeRequest extends CreditRequest {
+public class AutoStrikeOutbound extends CreditOutbound {
 
     private String customerId;
     private BigDecimal cashInAmount;

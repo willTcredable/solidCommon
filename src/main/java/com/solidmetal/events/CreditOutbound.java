@@ -1,9 +1,9 @@
-package com.solidmetal.request;
+package com.solidmetal.events;
 
 import lombok.Data;
 
 @Data
-public class CreditRequest {
+public class CreditOutbound {
 
     private String customerId;
     private String productCode;

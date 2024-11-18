@@ -1,4 +1,4 @@
-package com.solidmetal.request;
+package com.solidmetal.events;
 
 import lombok.Data;
 
@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 
 @Data
-public class CreditSubscriptionRequest extends CreditRequest {
+public class SubscriptionOutbound extends CreditOutbound {
 
     private BigDecimal maxLoanLimit;
     private BigDecimal eligibleAmount;

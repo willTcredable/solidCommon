@@ -1,4 +1,4 @@
-package com.solidmetal.request;
+package com.solidmetal.events;
 
 import com.solidmetal.enums.ApplicationStatus;
 import lombok.Data;
@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 
 @Data
-public class CreditLoanApplicationRequest extends CreditRequest {
+public class LoanApplicationOutbound extends CreditOutbound {
 
     private BigDecimal loanAmount;
     private BigDecimal score;
