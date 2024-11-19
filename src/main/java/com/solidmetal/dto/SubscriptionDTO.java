@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 @Data
 public class SubscriptionDTO implements Serializable {
 
-
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -24,4 +23,21 @@ public class SubscriptionDTO implements Serializable {
     private String productName;
     private String partnerCode;
     private String partnerName;
+
+
+    @Override
+    public String toString() {
+        return "SubscriptionDTO{" +
+                "id=" + id +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", customerId='" + customerId + '\'' +
+                ", status=" + status +
+                ", comments='" + comments + '\'' +
+                ", productCode='" + productCode + '\'' +
+                ", productName='" + productName + '\'' +
+                ", partnerCode='" + partnerCode + '\'' +
+                ", partnerName='" + partnerName + '\'' +
+                '}';
+    }
 }

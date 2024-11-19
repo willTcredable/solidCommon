@@ -1,4 +1,4 @@
-package com.solidmetal.dto;
+package com.solidmetal.enums;
 
 public enum Gender {
     ALL,
