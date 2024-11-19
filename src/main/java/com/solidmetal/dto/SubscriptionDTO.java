@@ -27,7 +27,7 @@ public class SubscriptionDTO implements Serializable {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime updatedAt;
 
-    private String customerId;
+    private String customerNumber;
     private SubscriptionStatus status;
     private String comments;
     private String productCode;
@@ -46,7 +46,7 @@ public class SubscriptionDTO implements Serializable {
                 "id=" + id +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", customerId='" + customerId + '\'' +
+                ", customerNumber='" + customerNumber + '\'' +
                 ", status=" + status +
                 ", comments='" + comments + '\'' +
                 ", productCode='" + productCode + '\'' +

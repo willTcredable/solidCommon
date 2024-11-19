@@ -67,12 +67,15 @@ public class CustomerDTO implements Serializable  {
     private BigDecimal maxLoanLimit;
     private BigDecimal eligibleAmount;
     private BigDecimal score;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime creditScoreCheckDate;
+
     private String customerId;
     private SubscriptionStatus status;
 
     private List<SubscriptionDTO> subscriptions;
-
 
     @Override
     public String toString() {
