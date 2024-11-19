@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.solidmetal</groupId>
 	<artifactId>common</artifactId>
-	<version>0.0.22</version>
+	<version>0.0.25</version>
 	<packaging>jar</packaging>
 	<name>Common</name>
 	<url>http://maven.apache.org</url>
@@ -55,6 +55,12 @@
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
+
 	</dependencies>
 	<distributionManagement>
 		<repository>

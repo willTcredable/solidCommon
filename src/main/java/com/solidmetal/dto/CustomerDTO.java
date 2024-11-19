@@ -1,5 +1,9 @@
 package com.solidmetal.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.solidmetal.constants.Utils;
 import com.solidmetal.enums.Gender;
 import com.solidmetal.enums.SubscriptionStatus;
 import lombok.Data;
@@ -16,7 +20,13 @@ public class CustomerDTO implements Serializable  {
     private static final long serialVersionUID = 1L;
 
     private Long id;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime createdAt;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime updatedAt;
     private String mobile;
     private String systemIdNumber;
@@ -30,13 +40,27 @@ public class CustomerDTO implements Serializable  {
     private String district;
     private String region;
     private Gender gender;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime dateOfBirth;
     private String picturePath;
     private String email;
 
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime activatedDate;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime suspendedDate;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime deactivatedDate;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime lastActiveDate;
 
     private BigDecimal maxLoanLimit;

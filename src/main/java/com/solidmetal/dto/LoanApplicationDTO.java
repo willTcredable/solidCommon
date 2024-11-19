@@ -1,5 +1,9 @@
 package com.solidmetal.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.solidmetal.constants.Utils;
 import com.solidmetal.enums.ApplicationStatus;
 import lombok.Data;
 
@@ -26,7 +30,13 @@ public class LoanApplicationDTO implements Serializable {
     private String partnerName;
 
     private String tenorCode;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime createdAt;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime updatedAt;
 
     private ApplicationStatus status;
@@ -38,6 +48,8 @@ public class LoanApplicationDTO implements Serializable {
     private String transactionId;
     private String description;
 
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime completedAt;
 
     private String externalTransactionId;

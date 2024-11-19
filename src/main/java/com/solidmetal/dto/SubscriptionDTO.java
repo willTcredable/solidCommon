@@ -1,5 +1,9 @@
 package com.solidmetal.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.solidmetal.constants.Utils;
 import com.solidmetal.enums.SubscriptionStatus;
 import lombok.Data;
 
@@ -14,8 +18,15 @@ public class SubscriptionDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime createdAt;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime updatedAt;
+
     private String customerId;
     private SubscriptionStatus status;
     private String comments;
@@ -23,6 +34,10 @@ public class SubscriptionDTO implements Serializable {
     private String productName;
     private String partnerCode;
     private String partnerName;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    private LocalDateTime consentAt;
 
 
     @Override

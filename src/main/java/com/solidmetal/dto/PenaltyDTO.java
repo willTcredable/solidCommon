@@ -1,5 +1,9 @@
 package com.solidmetal.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.solidmetal.constants.Utils;
 import com.solidmetal.enums.TransactionType;
 import lombok.Data;
 
@@ -17,9 +21,17 @@ public class PenaltyDTO implements Serializable {
     private Long id;
 
     private BigDecimal amount;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime createdAt;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime updatedAt;
 
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime transactionDate;
 
     private TransactionType activity;

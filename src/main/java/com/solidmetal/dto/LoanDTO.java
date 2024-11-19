@@ -1,5 +1,9 @@
 package com.solidmetal.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.solidmetal.constants.Utils;
 import com.solidmetal.enums.LoanStatus;
 import lombok.Data;
 
@@ -17,7 +21,12 @@ public class LoanDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime createdAt;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime updatedAt;
     private String accountNumber;
     private String customerId;
@@ -30,6 +39,8 @@ public class LoanDTO implements Serializable {
 
     private String partnerName;
 
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LoanStatus status;
 
     private String currency;
@@ -37,6 +48,9 @@ public class LoanDTO implements Serializable {
     private BigDecimal balance;
     private BigDecimal disbursedAmount;
     private BigDecimal paidAmount;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime lastTransactionDate;
 
     private BigDecimal interestAmount;
@@ -48,7 +62,12 @@ public class LoanDTO implements Serializable {
 
     private int duration;
 
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime loanStartDate;
+
+    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime loanEndDate;
 
     private String bankPartner;
