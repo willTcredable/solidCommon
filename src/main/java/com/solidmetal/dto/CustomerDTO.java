@@ -12,6 +12,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 public class CustomerDTO implements Serializable  {
@@ -70,6 +71,8 @@ public class CustomerDTO implements Serializable  {
     private String customerId;
     private SubscriptionStatus status;
 
+    private List<SubscriptionDTO> subscriptions;
+
 
     @Override
     public String toString() {
@@ -102,6 +105,7 @@ public class CustomerDTO implements Serializable  {
                 ", creditScoreCheckDate=" + creditScoreCheckDate +
                 ", customerId='" + customerId + '\'' +
                 ", status=" + status +
+                ", subscriptions=" + subscriptions +
                 '}';
     }
 }
