@@ -9,8 +9,9 @@ import java.time.LocalDateTime;
 @Data
 public class PenaltyOutbound extends CreditOutbound {
 
-    private String externalTransactionId;
+    private String transactionId;
     private BigDecimal balance;
+    private BigDecimal penaltyRate;
     private LocalDateTime transactionDate;
     private BigDecimal amount;
     private String accountNumber;
