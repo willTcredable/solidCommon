@@ -84,6 +84,10 @@ public class LoanDTO implements Serializable {
     private BigDecimal interestRate;
     private BigDecimal provisioningRate;
 
+    private String conversationId;
+    private String timestamp;
+    private String channel;
+
 
     @Override
     public String toString() {
@@ -119,6 +123,9 @@ public class LoanDTO implements Serializable {
                 ", penalties=" + penalties +
                 ", interestRate=" + interestRate +
                 ", provisioningRate=" + provisioningRate +
+                ", conversationId='" + conversationId + '\'' +
+                ", timestamp='" + timestamp + '\'' +
+                ", channel='" + channel + '\'' +
                 '}';
     }
 }
