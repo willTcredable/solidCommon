@@ -42,10 +42,16 @@ public class RepaymentDTO implements Serializable {
     private String timestamp;
     private String channel;
 
+    private String accountNumber;
+
     private BigDecimal balance;
 
-    private Long loanId;
+    private Long productCode;
+    private String partnerCode;
+    private String productName;
+    private String partnerName;
 
+    private String customerId;
 
     @Override
     public String toString() {
@@ -60,8 +66,8 @@ public class RepaymentDTO implements Serializable {
                 ", conversationId='" + conversationId + '\'' +
                 ", timestamp='" + timestamp + '\'' +
                 ", channel='" + channel + '\'' +
+                ", accountNumber='" + accountNumber + '\'' +
                 ", balance=" + balance +
-                ", loanId=" + loanId +
                 '}';
     }
 }
