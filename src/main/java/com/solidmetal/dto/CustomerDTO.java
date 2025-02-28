@@ -12,10 +12,11 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class CustomerDTO implements Serializable  {
+public class CustomerDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -29,8 +30,6 @@ public class CustomerDTO implements Serializable  {
     @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime updatedAt;
-    private String mobile;
-    private String systemIdNumber;
     private String idType;
     private String idNumber;
     private String firstName;
@@ -41,6 +40,12 @@ public class CustomerDTO implements Serializable  {
     private String district;
     private String region;
     private Gender gender;
+    private String additionalInfo;
+    private String businessName;
+    private String msisdn;
+    private String balanceOnSubscription;
+    private String hashedCustomerId;
+    private List<CustomerWalletDTO> wallets = new ArrayList<>();
 
     @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
@@ -77,14 +82,18 @@ public class CustomerDTO implements Serializable  {
 
     private List<SubscriptionDTO> subscriptions;
 
+    public void setHashedCustomerId(String hashedCustomerId) {
+        if (null == hashedCustomerId) {
+            this.hashedCustomerId = customerId;
+        }
+    }
+
     @Override
     public String toString() {
         return "CustomerDTO{" +
                 "id=" + id +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", mobile='" + mobile + '\'' +
-                ", systemIdNumber='" + systemIdNumber + '\'' +
                 ", idType='" + idType + '\'' +
                 ", idNumber='" + idNumber + '\'' +
                 ", firstName='" + firstName + '\'' +
@@ -95,6 +104,12 @@ public class CustomerDTO implements Serializable  {
                 ", district='" + district + '\'' +
                 ", region='" + region + '\'' +
                 ", gender=" + gender +
+                ", additionalInfo='" + additionalInfo + '\'' +
+                ", businessName='" + businessName + '\'' +
+                ", msisdn='" + msisdn + '\'' +
+                ", balanceOnSubscription='" + balanceOnSubscription + '\'' +
+                ", hashedCustomerId='" + hashedCustomerId + '\'' +
+                ", wallets=" + wallets +
                 ", dateOfBirth=" + dateOfBirth +
                 ", picturePath='" + picturePath + '\'' +
                 ", email='" + email + '\'' +
