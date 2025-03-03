@@ -3,6 +3,7 @@ package com.solidmetal.comms;
 public class Topics {
 
     public static final String CUSTOMER_CREATED_TOPIC = "CUSTOMER_CREATED_TOPIC";
+    public static final String CUSTOMER_KYC_TOPIC = "CUSTOMER_KYC_TOPIC";
     public static final String CUSTOMER_ELIGIBILITY_TOPIC = "CUSTOMER_ELIGIBILITY_TOPIC";
     public static final String CUSTOMER_SUSPENDED_TOPIC = "CUSTOMER_SUSPENDED_TOPIC";
     public static final String CUSTOMER_DEACTIVATED_TOPIC = "CUSTOMER_DEACTIVATED_TOPIC";
