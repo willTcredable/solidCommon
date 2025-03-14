@@ -11,6 +11,7 @@ public class KycDTO {
     private BigDecimal balance;
     private String idType;
     private String msisdn;
+    private String gender;
     private String firstName;
     private String businessName;
     private String idNumber;
