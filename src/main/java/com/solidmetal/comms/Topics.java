@@ -16,4 +16,5 @@ public class Topics {
     public static final String CUSTOMER_CASH_IN_TOPIC = "CUSTOMER_CASH_IN_TOPIC";
     public static final String LOAN_PENALTY_TOPIC = "LOAN_PENALTY_TOPIC";
     public static final String LOAN_REQUEST_FAILED_TOPIC = "LOAN_REQUEST_FAILED_TOPIC";
+    public static final String GENERAL_REPORT_REQUEST_TOPIC = "GENERAL_REPORT_REQUEST_TOPIC";
 }
