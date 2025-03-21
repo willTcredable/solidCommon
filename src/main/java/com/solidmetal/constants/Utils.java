@@ -1,27 +1,15 @@
 package com.solidmetal.constants;
 
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.MimeMessage;
 import org.bouncycastle.crypto.digests.Blake2bDigest;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 
-import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
+import java.time.format.DateTimeFormatter;
 
 
 public class Utils {
 
     public static final String SOLID_DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
-
-    private final JavaMailSender javaMailSender;
-
-    public Utils(JavaMailSender javaMailSender) {
-        this.javaMailSender = javaMailSender;
-    }
+    public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
 
     public static String hashCustomerId(String customerId) {
 
@@ -45,51 +33,5 @@ public class Utils {
         } catch (Exception e) {
             return customerId;
         }
-    }
-
-    public static File zipFile(String filePath) throws IOException {
-
-        File fileToZip = new File(filePath);
-        File zipFile = new File(fileToZip.getParent(), fileToZip.getName() + ".zip");
-
-        try (FileOutputStream fos = new FileOutputStream(zipFile);
-             ZipOutputStream zos = new ZipOutputStream(fos);
-             FileInputStream fis = new FileInputStream(fileToZip)) {
-
-            ZipEntry zipEntry = new ZipEntry(fileToZip.getName());
-            zos.putNextEntry(zipEntry);
-
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = fis.read(buffer)) >= 0) {
-                zos.write(buffer, 0, length);
-            }
-
-            zos.closeEntry();
-        }
-
-        return zipFile;
-    }
-
-    public void sendEmail(String emailTo, String subject, String bodyMessage, File attachment) throws MessagingException, UnsupportedEncodingException {
-
-        MimeMessage message = javaMailSender.createMimeMessage();
-
-        MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
-
-        messageHelper.setFrom("Solid Metal Platform", "Solid Metal Platform");
-
-        messageHelper.setTo(emailTo);
-        messageHelper.setSubject(subject);
-        messageHelper.setText(bodyMessage); // true indicates that the text is HTML
-
-        // Add the attachment if it exists
-        if (null != attachment && attachment.exists()) {
-
-            FileSystemResource fileResource = new FileSystemResource(attachment);
-            messageHelper.addAttachment(attachment.getName(), fileResource);
-        }
-
-        javaMailSender.send(message);
     }
 }
