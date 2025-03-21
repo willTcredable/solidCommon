@@ -1,53 +1,27 @@
-package com.solidmetal.constants;
+package com.solidmetal;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
-import org.bouncycastle.crypto.digests.Blake2bDigest;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 
-public class Utils {
-
-    public static final String SOLID_DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
+@Service
+public class Helper {
 
     private final JavaMailSender javaMailSender;
 
-    public Utils(JavaMailSender javaMailSender) {
+    public Helper(JavaMailSender javaMailSender) {
         this.javaMailSender = javaMailSender;
     }
 
-    public static String hashCustomerId(String customerId) {
-
-        try {
-
-            Blake2bDigest digest = new Blake2bDigest(128); // 128-bit digest
-
-            byte[] inputBytes = customerId.getBytes(StandardCharsets.UTF_8);
-            digest.update(inputBytes, 0, inputBytes.length);
-
-            byte[] hashBytes = new byte[digest.getDigestSize()];
-            digest.doFinal(hashBytes, 0);
-
-            // Convert to hex
-            StringBuilder hexString = new StringBuilder();
-            for (byte b : hashBytes) {
-                hexString.append(String.format("%02x", b));
-            }
-            return hexString.toString();
-
-        } catch (Exception e) {
-            return customerId;
-        }
-    }
-
-    public static File zipFile(String filePath) throws IOException {
+    public File zipFile(String filePath) throws IOException {
 
         File fileToZip = new File(filePath);
         File zipFile = new File(fileToZip.getParent(), fileToZip.getName() + ".zip");
@@ -77,7 +51,7 @@ public class Utils {
 
         MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
-        messageHelper.setFrom("Solid Metal Platform", "Solid Metal Platform");
+        messageHelper.setFrom("SolidMetalPlatform", "SolidMetalPlatform");
 
         messageHelper.setTo(emailTo);
         messageHelper.setSubject(subject);
