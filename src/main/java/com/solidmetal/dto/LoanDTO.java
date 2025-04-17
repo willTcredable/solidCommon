@@ -35,9 +35,6 @@ public class LoanDTO implements Serializable {
     private String partnerCode;
     private String productName;
     private String partnerName;
-
-    @JsonFormat(pattern = Utils.SOLID_DATE_TIME_FORMAT)
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LoanStatus status;
 
     private String currency;
